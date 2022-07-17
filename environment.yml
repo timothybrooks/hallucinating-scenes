@@ -1,0 +1,28 @@
+channels:
+  - defaults
+  - pytorch
+  - conda-forge
+dependencies:
+  - black
+  - cudatoolkit=11.1
+  - ipython
+  - joblib
+  - numpy
+  - omegaconf
+  - pip
+  - pytorch-lightning=1.3.0
+  - pytorch=1.8.1
+  - scikit-learn
+  - scipy
+  - seaborn
+  - torchvision=0.9.1
+  - tqdm
+  - pip:
+      - av
+      - einops
+      - hydra-core
+      - lmdb
+      - opencv-python-headless
+      - pillow-simd
+      - simple_term_menu
+      - wandb
