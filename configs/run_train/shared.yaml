@@ -1,0 +1,71 @@
+# @package _global_
+defaults:
+  - override hydra/job_logging: stdout
+hydra:
+  run:
+    dir: .
+  output_subdir: null
+resume:
+  id: null
+  step: null
+wandb:
+  group: ablations
+  project: human_gan
+  entity: timbrooks
+  offline: false
+dataset:
+  path: /home/timbrooks/datasets/humans
+  resolution: 128
+data_loader:
+  num_workers: 3
+  pin_memory: true
+  drop_last: true
+  prefetch_factor: 2
+  persistent_workers: true
+model:
+  learning_rate: 0.0025
+  ema_beta: 0.995
+  ema_warmup: 0.05
+  lambda_r1: 0.05
+  lambda_path: 2.0
+  batch_shrink_path: 2
+  interval_r1: 16
+  interval_path: 4
+  interval_log_frames: 5000
+augmentation:
+  brightness:
+    - -0.5
+    - 0.5
+  saturation:
+    - 0.0
+    - 2.0
+  contrast:
+    - 0.5
+    - 1.5
+  flip_prob: 0.5
+  scale: 1.25
+  translate: 0.125
+  erasing_ratio: 0.5
+  pose_dropout: 0.0
+discriminator:
+  stddev_groups: 4
+  stddev_channels: 1
+  limb_heatmaps: false
+  mixed_precision: false
+  activation_clamp: null
+generator:
+  style_dim: 512
+  noise_dim: 512
+  mapping_hidden_dim: 512
+  mapping_num_layers: 8
+  mapping_lr_multiplier: 0.01
+  limb_heatmaps: false
+  mixed_precision: false
+  activation_clamp: null
+trainer:
+  accelerator: ddp
+  benchmark: true
+  deterministic: false
+  gpus: -1
+  max_steps: 3000000
+  profiler: simple

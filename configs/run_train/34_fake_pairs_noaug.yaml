@@ -1,0 +1,26 @@
+defaults:
+  - shared
+
+wandb:
+  name: fake_pairs_noaug
+dataset:
+  num_frames: 8
+  spacing: 4
+data_loader:
+  batch_size: 40
+model:
+  mixing: 0.0
+  fake_pair: true
+augmentation:
+  enabled: false
+discriminator:
+  base_channels: 16384
+  max_channels: 512
+  keypoint_mapping: true
+  keypoint_heatmaps: true
+generator:
+  keypoint_embed_dim: 512
+  base_channels: 16384
+  max_channels: 512
+  spatial_noise: false
+  keypoint_heatmaps: true

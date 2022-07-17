@@ -1,0 +1,26 @@
+defaults:
+  - shared
+
+wandb:
+  name: stylegan2
+dataset:
+  num_frames: 1
+  spacing: 1
+data_loader:
+  batch_size: 40
+model:
+  mixing: 0.9
+  fake_pair: false
+augmentation:
+  enabled: false
+discriminator:
+  base_channels: 16384
+  max_channels: 512
+  keypoint_mapping: false
+  keypoint_heatmaps: false
+generator:
+  keypoint_embed_dim: 0
+  base_channels: 16384
+  max_channels: 512
+  spatial_noise: true
+  keypoint_heatmaps: false
