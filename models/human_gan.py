@@ -387,7 +387,7 @@ class HumanGAN(LightningModule):
 
     @staticmethod
     def _get_checkpoint_path(id: str, step: Optional[int] = None) -> str:
-        checkpoint_dir = os.path.join("checkpoints/gan", id)
+        checkpoint_dir = os.path.join("checkpoints", id)
 
         if os.path.exists(checkpoint_dir):
             checkpoint_filenames = os.listdir(checkpoint_dir)

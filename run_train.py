@@ -11,7 +11,7 @@ import models
 import utils
 
 
-@hydra.main(config_path="configs/run_train", config_name="13_large_no_mismatch_no_aug")
+@hydra.main(config_path="configs/run_train", config_name="ours")
 def train(config: omegaconf.DictConfig):
 
     logger = utils.Logger(**config.wandb)

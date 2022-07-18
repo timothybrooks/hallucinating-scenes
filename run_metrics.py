@@ -133,7 +133,7 @@ if __name__ == "__main__":
         default=["fid", "pck"],
         choices=("fid", "is", "kid", "pck", "pr"),
     )
-    parser.add_argument("--dataset", default="/home/timbrooks/datasets/humans")
+    parser.add_argument("--dataset", default="humans_in_context")
     parser.add_argument("--split", default="train", choices=["test", "train"])
     parser.add_argument("--batch_size", type=int, default=8)
     parser.add_argument("--seed", type=int, default=0)
