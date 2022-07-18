@@ -227,8 +227,6 @@ def list_frame_keys(
     poses_db = _open_db("poses_db")
     rejects_db = _open_db("rejects_db")
 
-    # FIXME: Save and load frames_db.keys().
-
     frame_keys = []
     for frame_key in frames_db.keys(verbose=True):
 
@@ -316,8 +314,6 @@ class PoseClipMaker:
 
         progress_bar.close()
 
-        # FIXME: Filter out clips in cropped_clips_db.
-
         progress_bar = tqdm.tqdm(
             new_clips,
             desc="Saving clips with valid poses",
@@ -332,11 +328,6 @@ class PoseClipMaker:
 
     def _clip_worker(self, index: int, clip: str):
         clip_name = f"clip_{index:07d}"
-
-        # FIXME: Why doesnt this work?
-
-        # if clip_name in self.cropped_clips_db:
-        #     return
 
         frame_names = []
 
