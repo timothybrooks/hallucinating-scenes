@@ -15,7 +15,7 @@ We used pretrained Inception, VGG and OpenPose networks for evaluation and datas
 
 #### Construct dataset
 
-Please see the dataset page [here](https://github.com/timothybrooks/hallucinating-scenes/edit/master/dataset.md) for instructions to download the 10 source datasets and construct our meta-dataset. The dataset (or some subset of it) is necessary to train models as well as to provide input poses for generating images and evaluating the model.
+Please see the dataset page [here](https://github.com/timothybrooks/hallucinating-scenes/blob/master/dataset.md) for instructions to download the 10 source datasets and construct our meta-dataset. The dataset (or some subset of it) is necessary to train models as well as to provide input poses for generating images and evaluating the model.
 
 #### Generate images
 
