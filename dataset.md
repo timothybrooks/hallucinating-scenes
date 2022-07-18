@@ -43,3 +43,9 @@ Videos are available for download directly on the dataset webpage.
 - YouTube-VOS  
 https://youtube-vos.org/dataset/  
 The dataset webpage provides instructions for downloading the dataset as part of their benchmark challange tasks.
+
+### 2. Extract high quality frames.
+
+### 3. Filter frames with person detection.
+
+### 4. Filter and label using OpenPose.
