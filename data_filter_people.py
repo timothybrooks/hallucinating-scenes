@@ -26,23 +26,6 @@ import tqdm
 
 import data
 
-# Filter for frames which pass criteria.
-# Remove frames without min adjacent num frames.
-# Break into new clips.
-# Crop adjacent frames to average center bounding box.
-# Save box metadata.
-# Continue where left off if job dies at any point.
-
-# FIXME: Check for min contiguous sequence of frames (parallel over clips), and
-# average boxes for crop center.
-# FIXME: Save new dict of output clips.
-# FIXME: Crop images based on boxes and copy (parallel over frames).
-
-
-# ==============================================================================
-# Dataset.
-# ==============================================================================
-
 
 @dataclass
 class FrameDataset(torch_data.Dataset):
@@ -473,7 +456,7 @@ def list_frame_paths(
 # ==============================================================================
 
 
-@hydra.main(config_path="configs", config_name="filter_people")
+@hydra.main(config_path="configs", config_name="data/filter_people")
 def filter_people(config: omegaconf.DictConfig):
 
     if config.input_dir is None or config.output_dir is None:

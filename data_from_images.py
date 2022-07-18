@@ -239,7 +239,7 @@ class FrameExtractor:
         return temp_dir
 
 
-@hydra.main(config_path="configs", config_name="extract_frame_dirs")
+@hydra.main(config_path="configs", config_name="data/from_images")
 def extract_frames(config: omegaconf.DictConfig):
 
     if config.input_dir is None or config.output_dir is None:
