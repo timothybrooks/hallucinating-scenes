@@ -350,7 +350,7 @@ class PoseClipMaker:
 # ==============================================================================
 
 
-@hydra.main(config_path="configs", config_name="data/detect_pose")
+@hydra.main(config_path="configs/data", config_name="detect_pose")
 def filter_people(config: omegaconf.DictConfig):
 
     if config.input_dir is None or config.output_dir is None:

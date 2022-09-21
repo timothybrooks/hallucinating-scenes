@@ -25,6 +25,7 @@ import torch.utils.data as torch_data
 import tqdm
 
 import data
+import utils
 
 
 @dataclass
@@ -290,17 +291,11 @@ class PersonClipMaker:
 
         progress_bar.close()
 
-        progress_bar = tqdm.tqdm(
-            new_clips,
-            desc="Saving cropped clips with valid people",
-            unit=" clips",
-            smoothing=0.01,
-        )
-
-        for index, clip in enumerate(progress_bar):
-            self._clip_worker(index, clip)
-
-        progress_bar.close()
+        with utils.ParallelProgressBar(n_jobs=-1) as parallel:
+            parallel.tqdm(
+                desc="Saving cropped clips with valid people", unit=" clips"
+            )
+            parallel(self._clip_worker, new_clips)
 
     def _clip_worker(self, index: int, clip: str):
         clip_name = f"clip_{index:07d}"
@@ -449,7 +444,7 @@ def list_frame_paths(
 # ==============================================================================
 
 
-@hydra.main(config_path="configs", config_name="data/filter_people")
+@hydra.main(config_path="configs/data", config_name="filter_people")
 def filter_people(config: omegaconf.DictConfig):
 
     if config.input_dir is None or config.output_dir is None:
