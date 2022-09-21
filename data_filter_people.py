@@ -290,8 +290,6 @@ class PersonClipMaker:
 
         progress_bar.close()
 
-        # FIXME: Filter out clips in cropped_clips_db.
-
         progress_bar = tqdm.tqdm(
             new_clips,
             desc="Saving cropped clips with valid people",
@@ -306,11 +304,6 @@ class PersonClipMaker:
 
     def _clip_worker(self, index: int, clip: str):
         clip_name = f"clip_{index:07d}"
-
-        # FIXME: Why doesnt this work?
-
-        # if clip_name in self.cropped_clips_db:
-        #     return
 
         frame_names = []
 
