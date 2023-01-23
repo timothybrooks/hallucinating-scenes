@@ -6,12 +6,19 @@ Official code release.
 We use Anaconda to manage our python environment. Please install Anaconda and run the commands below to install dependencies and activate the environment:
 ```
 conda env create -f environment.yml -n hallucinating-scenes
-coonda activate hallucinating-scenes
+conda activate hallucinating-scenes
 ```
 
 ### Download pretrained models
 
 We used pretrained Inception, VGG and OpenPose networks for evaluation and dataset construction. We also provide a pretrained checkpoint of our final model. Please download all of these checkpoints [here](https://drive.google.com/drive/folders/1VsqGT9eEedW97HVN6OEwLT77B3fB_Wj2?usp=sharing). Place `inception-2015-12-05.pt` and `vgg16.pt` under `metrics/pretrained/`, `open_pose.pt` under `open_pose/pretrained/`, and `ours.ckpt` under `checkpoints/ours/`.
+
+| fileame                | folder               |
+| :---:                  | :---:                |
+| inception-2015-12-05.pt| metrics/pretrained/  |
+| vgg16.pt               | metrics/pretrained/  |
+| open_pose.pt           | open_pose/pretrained/|
+| ours.ckpt              | checkpoints/ours/    |
 
 ### Construct dataset
 
