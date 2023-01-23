@@ -1,3 +1,4 @@
+name:hallucinating_scenes
 channels:
   - defaults
   - pytorch
